@@ -1,4 +1,7 @@
 function ds_sa = cosmo_target_dsm_corr_measure_jsm(ds, varargin)
+%
+% MODIFIED VERSION OF COSMO FUNCTION TO ENABLE USE WITH cvDistance TOOLBOX FOR GETTING CROSS-VALIDATED EUCLIDEAN DISTANCES
+%
 % measure correlation with target dissimilarity matrix
 %
 % ds_sa = cosmo_target_dsm_corr_measure(dataset, args)

@@ -1,4 +1,4 @@
-function SearchlightRSA_Character(SUB)
+function searchlight_rsa_social(SUB)
 
 close all; clearvars -except SUB
 addpath(genpath('/data/bswift-1/jmerch/CAT/code/rsatoolbox-develop'));
@@ -76,27 +76,7 @@ if ~isfile(fullfile(output_path,strcat(SUB,'_searchlight_socialnetwork.nii')))
 end
 
 	
-% if ~isfile(fullfile(output_path,strcat(SUB,'_searchlight_character.nii')))
-% 
-% 	% echo subject
-% 	disp('')
-% 	disp('--------------------------------------------------')
-% 	
-% 	datetime
-% 	% Define target dsm model 
-%     % define dsm measure
-%     measure = @cosmo_target_dsm_corr_measure;
-%     measure_args = struct();
-%     measure_args.metric = 'euclidean';
-%     measure_args.type = 'Kendall';
-%     measure_args.center_data=true;
-% 	measure_args.target_dsm = CharRDM;
-% 	glm_dsm_results = cosmo_searchlight(ds,nbrhood,measure,'nproc', 6, measure_args);
-% 	glm_dsm_results.samples=atanh(glm_dsm_results.samples);
-% 	cosmo_map2fmri(glm_dsm_results, ...
-% 	fullfile(output_path,strcat(SUB,'_searchlight_character.nii')));
-% 
-% end
+
 
 
 	

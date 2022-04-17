@@ -1,6 +1,8 @@
 function d=cosmo_pdist_jsm(x, targets)
 % compute pair-wise distance between samples in a matrix
 %
+% MODIFIED VERSION OF COSMO FUNCTION TO ENABLE USE WITH cvDistance TOOLBOX FOR GETTING CROSS-VALIDATED EUCLIDEAN DISTANCES
+%
 % d=cosmo_pdist(x[, distance])
 %
 % Inputs:

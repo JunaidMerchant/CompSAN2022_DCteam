@@ -1,8 +1,8 @@
-
-cd('/Users/junaid/Desktop/Spring2022/CompSAN/AlexNet_RSA')
+% matlab code used to AlexNet features from images of actor faces. 
+% requires installation of AlexNet for your version of matlab
 
 % load image set
-imds = imageDatastore('actor','LabelSource','foldernames');
+imds = imageDatastore('actor_images','LabelSource','foldernames');
 
 % add labels 
 imds.Labels={'GaiusCharles'

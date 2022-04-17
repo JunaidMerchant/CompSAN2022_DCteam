@@ -1,4 +1,4 @@
-function SearchlightRSA_AlexNet_NEW(SUB,NUM)
+function searchlight_rsa_alexnet(SUB,NUM)
 
 close all; clearvars -except SUB NUM
 addpath(genpath('/data/bswift-1/jmerch/CAT/code/rsatoolbox-develop'));
@@ -59,11 +59,8 @@ AlexModels=dir('/data/bswift-1/jmerch/CompSAN/alexnet_dsms_actors/*.txt');
 
 
 
-if NUM > 5
-    LAYER=strcat('fc',num2str(NUM));
-else
-    LAYER=strcat('conv',num2str(NUM));
-end
+LAYER=strcat('conv',num2str(NUM));
+
 
 
 

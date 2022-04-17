@@ -1,5 +1,7 @@
 function [clean_ds,num_vox] = remove_zero_cosmo_ds(input_ds)
 
+% FUNCTION TO REMOVE ZEROS BEFORE CALCULATING SIMILARITY MEASURES
+% FOR USE WITH COSMOMVPA TOOLBOX
 
 indx=all(input_ds.samples~=0);
 
