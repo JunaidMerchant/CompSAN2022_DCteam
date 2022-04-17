@@ -46,7 +46,7 @@ aws rekognition start-celebrity-recognition --video "S3Object={Bucket=compsan,Na
 
 ```
 
-The default is that it will print the results in json format straight into terminal, but you can pipe this to print to file. For example: 
+Once the process has finished recognizing all the celebrities, you use a different function to retrieve the results. The default is that it will print the results in json format straight into terminal, but you can pipe this to print to file. For example: 
 
 ```
 aws rekognition get-celebrity-recognition --job-id 07f2873664018186589f922990f4969817004a79d853412d4c42a424491def74 > CelebrityOutputTest.json
@@ -58,3 +58,41 @@ It is possible to sort by time-stamp also:
 aws rekognition get-celebrity-recognition --job-id 07f2873664018186589f922990f4969817004a79d853412d4c42a424491def74 --sort-by TIMESTAMP > CelebrityOutput_TimeSorted.json
 ```
 
+One challenge is that it only prints 1000 results on the call, and if there are more results, you have to page through the results. This can be a pain if you are wanting to get everything. Here is a solution I came up to page through the results and write to file. This is also included in aws_rekognition_page_results.sh script:
+
+```
+# Define job ID
+JOBID="f57a4cd35a8938116a655007028fe50677ff2ad92c0fd56fb918b63bcbc6d397"
+
+# Get first page of results
+aws rekognition get-face-detection --job-id $JOBID > FaceDefault_${x}.json
+
+# Get next token
+NEXTOKEN=$(grep "NextToken" FaceDefault_${x}.json)
+# remove double quotes
+NEXTOKEN=$(echo ${NEXTOKEN} | xargs)
+# remove "NextToken"
+NEXTOKEN=$(echo ${NEXTOKEN#"NextToken: "})
+# remove trailing comma
+NEXTOKEN=$(echo ${NEXTOKEN%","})
+
+# Start while loop that continues until there are no more next tokens
+while [ ${#NEXTOKEN} -gt 0 ]; do
+# echo x so we can see how many files are being created
+echo $x
+# echo token to check against
+echo $NEXTOKEN
+# add to counter
+x=`expr $x + 1`
+# print new file
+aws rekognition get-face-detection --job-id $JOBID --next-token $NEXTOKEN > FaceDefault_${x}.json 
+# assign next toke
+NEXTOKEN=$(grep "NextToken" FaceDefault_${x}.json)
+# remove double quotes
+NEXTOKEN=$(echo ${NEXTOKEN} | xargs)
+# remove "NextToken"
+NEXTOKEN=$(echo ${NEXTOKEN#"NextToken: "})
+# remove trailing comma
+NEXTOKEN=$(echo ${NEXTOKEN%","})
+done
+```
