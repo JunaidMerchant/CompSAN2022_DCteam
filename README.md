@@ -4,7 +4,7 @@ This was a collaborative effort by Junaid S Merchant, Shawn A Rhoads, Oliver Xie
 
 - Please note that because this was a collaborative effort across different institutions and computing resources, the paths and formats of the different pieces of code are not unified (reflecting different practices of the people involved.)
 
--- Though this repository does not include code for all the different analyses that we conducted (not included in the abstract or poster). However, along the way, we relied heavily on python libraries (NiLearn, sklearn, NiBabel, NLtools, scipy and others), matlab toolboxes, (cvVectorStats - https://github.com/fwillett/cvVectorStats, CoSMoMVPA - https://github.com/CoSMoMVPA, AlexNet, and others), as well as numerous AFNI functions.
+- Though this repository does not include code for all the different analyses that we conducted (not included in the abstract or poster). However, along the way, we relied heavily on python libraries (NiLearn, sklearn, NiBabel, NLtools, scipy and others), matlab toolboxes, (cvVectorStats - https://github.com/fwillett/cvVectorStats, CoSMoMVPA - https://github.com/CoSMoMVPA, AlexNet, and others), as well as numerous AFNI functions.
 
 Other - AFNI, 
 
