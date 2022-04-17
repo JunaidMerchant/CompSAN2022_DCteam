@@ -41,9 +41,20 @@ https://docs.aws.amazon.com/cli/latest/reference/rekognition/get-celebrity-recog
 
 For example, this is the command for starting the celebrity detection function:
 
-```aws rekognition start-celebrity-recognition --video "S3Object={Bucket=compsan,Name=MD5E-s6843119325--2d459faf2911fb6e982691bc5ba483f4.mp4}"
+```
+aws rekognition start-celebrity-recognition --video "S3Object={Bucket=compsan,Name=MD5E-s6843119325--2d459faf2911fb6e982691bc5ba483f4.mp4}"
+
 ```
 
-After it goes through your video, you have to use a different command to retrieve the results. By default, the 
+The default is that it will print the results in json format straight into terminal, but you can pipe this to print to file. For example: 
 
+```
+aws rekognition get-celebrity-recognition --job-id 07f2873664018186589f922990f4969817004a79d853412d4c42a424491def74 > CelebrityOutputTest.json
+```
+
+It is possible to sort by time-stamp also:
+
+```
+aws rekognition get-celebrity-recognition --job-id 07f2873664018186589f922990f4969817004a79d853412d4c42a424491def74 --sort-by TIMESTAMP > CelebrityOutput_TimeSorted.json
+```
 
