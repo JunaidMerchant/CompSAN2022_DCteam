@@ -20,6 +20,10 @@ This was a collaborative effort by Junaid S Merchant, Shawn A Rhoads, Oliver Xie
 
 `/celebrity_detect_rekognition_data` - data from rekognition that includes time stamps for each actor
 
+`compSAN_DC_Group_Abstract.pdf` - abstract submitted to CompSAN data competition
+
+`compSAN_DC_Group_Poster.pdf` - poster submitted to CompSAN data competition
+
 `cosmo_pdist_jsm.m` - modified cosmomvpa function
 
 `cosmo_target_dsm_corr_measure_jsm.m` - modified cosmomvpa function
